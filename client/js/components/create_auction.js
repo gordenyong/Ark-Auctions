@@ -24,7 +24,7 @@ function renderCreateAuction() {
             <input type="text" name="time">
           </fieldset>
           <fieldset>
-            <label for="">Auctin Duration: </label><br>
+            <label for="">Auction Duration: </label><br>
             <input type="text" name="auction_duration">
           </fieldset>
           <button>Add Auction</button>
@@ -41,9 +41,9 @@ function createAuction(event) {
     .post("/api/auctions", data)
     .then((res) => res.data)
     .then((newAuction) => state.auctions.push(newAuction))
-    .then(() => renderAuctionList())
-    .catch((error) => {
-      let errorDOM = document.querySelector(".create-auction.error");
-      errorDOM.textContent = error.response.data.message;
-    });
+    .then(() => renderAuctionList());
+  // .catch((error) => {
+  //   let errorDOM = document.querySelector(".create-auction .error");
+  //   errorDOM.textContent = error.response.data.message;
+  // });
 }
