@@ -30,7 +30,6 @@ function login(event) {
     .then((userName) => console.log(userName))
     .catch((error) => {
       let errorDOM = document.querySelector(".log-in .error");
-      console.log(error.response);
       errorDOM.textContent = error.response.data.message;
     });
 }
