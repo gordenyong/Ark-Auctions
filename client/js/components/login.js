@@ -27,7 +27,8 @@ function login(event) {
   axios
     .post("/api/sessions", data)
     .then((res) => res.data)
-    .then((userName) => console.log(userName))
+    .then((data) => (state.userName = data.userName))
+    .then(() => render("auctions"))
     .catch((error) => {
       let errorDOM = document.querySelector(".log-in .error");
       errorDOM.textContent = error.response.data.message;
