@@ -39,9 +39,11 @@ function createAuction(event) {
   const data = Object.fromEntries(new FormData(form));
   axios
     .post("/api/auctions", data)
+    .then(console.log(data))
     .then((res) => res.data)
-    .then((newAuction) => state.auctions.push(newAuction))
-    .then(() => renderAuctionList());
+    .then(console.log(res));
+  // .then((newAuction) => state.auctions.push(newAuction));
+  // .then(() => renderAuctionList());
   // .catch((error) => {
   //     let errorDOM = document.querySelector(".create-auction .error");
   //     errorDOM.textContent = error.response.data.message;
