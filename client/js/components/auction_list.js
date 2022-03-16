@@ -6,6 +6,7 @@ function renderAuctionList() {
 }
 
 function renderAuctions() {
+  console.log(state.auctions);
   return state.auctions
     .map(
       (auction) => `
@@ -22,4 +23,5 @@ function renderAuctions() {
     `
     )
     .join("");
+  console.log();
 }

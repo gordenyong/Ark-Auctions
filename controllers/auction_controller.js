@@ -10,10 +10,11 @@ router.get("/", (req, res) => {
 module.exports = router;
 
 router.post("/", (req, res) => {
+  console.log(req.body);
   if (req.session.userId) {
     const name = req.body.name;
     const type = req.body.type;
-    const img_url = req.body.img_url;
+    const img_url = req.body.image_url;
     const current_price = req.body.current_price;
     const time = req.body.time;
     const auction_duration = req.body.auction_duration;

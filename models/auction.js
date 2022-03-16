@@ -8,6 +8,7 @@ const Auction = {
   },
 
   create: (name, type, image_url, current_price, time, auction_duration) => {
+    console.log(name, type, image_url, current_price, time, auction_duration);
     const sql = `
             INSERT INTO auctions(name, type, image_url, current_price, time, auction_duration)
             VALUES ($1,$2,$3,$4,$5,$6)
