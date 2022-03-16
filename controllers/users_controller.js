@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post("/", (req, res) => {
   const { name, email, password } = req.body;
+  console.log(name, email, password);
 
   const passwordDigest = bcrypt.hashSync(
     password,

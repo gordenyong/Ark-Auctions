@@ -8,16 +8,16 @@ CREATE TABLE auctions(
   type TEXT,
   image_url TEXT,
   increment_price TEXT, 
-  current price TEXT, 
-  time TEXT, 
+  current_price TEXT, 
+  datetime TEXT, 
   active TEXT, 
-  auction duration TEXT
+  auction_duration TEXT
 );
 
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name TEXT,
   email TEXT, 
-  password_digest TEXT
+  password_digest TEXT,
   location TEXT
 );

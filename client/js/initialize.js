@@ -1,11 +1,11 @@
 const state = {
-  pokemons: []
-}
+  auctions: [],
+};
 
-
-axios.get('/api/pokemons')
-  .then(res => res.data)
-  .then(pokemons => {
-    state.pokemons = pokemons
-    renderPokemons()
-  })
+axios
+  .get("/api/auctions")
+  .then((res) => res.data)
+  .then((auctions) => {
+    state.auctions = auctions;
+    renderAuctions();
+  });
