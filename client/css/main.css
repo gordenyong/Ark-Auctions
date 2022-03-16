@@ -4,4 +4,14 @@
 }
 
 body {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  #page {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
 }

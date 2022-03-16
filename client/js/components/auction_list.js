@@ -11,14 +11,13 @@ function renderAuctions() {
     .map(
       (auction) => `
         <section class='auction' data-id="${auction.id}">
+            <div>
+              <img src="${auction.image_url}" alt="">
+            </div>   
             <header>
                 <h2>${auction.name}</h2>
+                <h3>$${auction.current_price}</h3>
             </header>
-            <p>${auction.type}</p>
-            <img src="${auction.image_url}" alt="">
-            <p>${auction.current_price}</p>
-            <p>${auction.time}</p>
-            <p>${auction.auction_duration}</p>
         </section>
     `
     )

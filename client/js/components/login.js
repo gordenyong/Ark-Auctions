@@ -1,20 +1,29 @@
 function renderLogin() {
   document.querySelector("#page").innerHTML = `
+  
     <section class="log-in">
-    <div class="error"></div>
-      <form action="" onSubmit="login(event)">
+      <header>
+        
+        <h2 class="other-htwo" onClick="render('signUp')">Sign Up</h2>
         <h2>Login:</h2>
-      
+      </header>  
+      <form action="" onSubmit="login(event)">
+      <div class="error"></div>
         <fieldset>
-          <label for="">Email: </label><br>
+          <label for="">Email: </label>
           <input type="text" name="email">
         </fieldset>
         <fieldset>
-          <label for="">Password: </label><br>
+          <label for="">Password: </label>
           <input type="password" name="password">
         </fieldset>
         <button>Login</button>
+        <button onClick="render('auctions')">Cancel</button>
       </form>
+     
+    </section>
+    <section class="auction-list">
+      ${renderAuctions()}
     </section>
   `;
 }

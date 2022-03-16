@@ -7,5 +7,5 @@ const sessions = session({
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 * 24 },
 });
-
+console.log(sessions);
 module.exports = sessions;
