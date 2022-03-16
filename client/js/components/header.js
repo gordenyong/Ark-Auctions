@@ -1,5 +1,6 @@
 function renderHeader() {
   document.querySelector("#header-nav").innerHTML = `
+  <h1>Welcome to Ark Auctions</h1>
   <ul>
     <li class="material-icons create-auction" onClick="render('createAuction')">add_circle</li>
     <li id="signUpIcon" class="material-icons sign-up-icon" onClick="render('signUp')">person_add</li>
