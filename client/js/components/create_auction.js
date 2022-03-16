@@ -8,7 +8,7 @@ function renderCreateAuction() {
             <input type="text" name="name">
           </fieldset>
           <fieldset>
-            <label for="">Type: </label><br>
+            <label for="">Current Type: </label><br>
             <input type="text" name="type">
           </fieldset>
           <fieldset>
@@ -16,11 +16,11 @@ function renderCreateAuction() {
             <input type="text" name="image_url">
           </fieldset>
           <fieldset>
-            <label for="">Current Price: </label><br>
+            <label for="">Starting Price: </label><br>
             <input type="text" name="current_price">
           </fieldset>
           <fieldset>
-            <label for="">Time: </label><br>
+            <label for="">Starting time: </label><br>
             <input type="text" name="time">
           </fieldset>
           <fieldset>
@@ -43,7 +43,7 @@ function createAuction(event) {
     .then((newAuction) => state.auctions.push(newAuction))
     .then(() => renderAuctionList());
   // .catch((error) => {
-  //   let errorDOM = document.querySelector(".create-auction .error");
-  //   errorDOM.textContent = error.response.data.message;
+  //     let errorDOM = document.querySelector(".create-auction .error");
+  //     errorDOM.textContent = error.response.data.message;
   // });
 }

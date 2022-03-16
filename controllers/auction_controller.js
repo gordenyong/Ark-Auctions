@@ -9,14 +9,24 @@ router.get("/", (req, res) => {
 
 module.exports = router;
 
-// router.post("/", (req, res) => {
-//   if (req.session.userId) {
-//     const name = req.body.name;
-//     const clue = req.body.clue;
-//     const address = req.body.address;
+router.post("/", (req, res) => {
+  if (req.session.userId) {
+    const name = req.body.name;
+    const type = req.body.type;
+    const img_url = req.body.img_url;
+    const current_price = req.body.current_price;
+    const time = req.body.time;
+    const auction_duration = req.body.auction_duration;
 
-//     Treasure.create(name, clue, address).then((treasure) => res.json(treasure));
-//   } else {
-//     res.status(422).json({ message: "not logged in" });
-//   }
-// });
+    Auction.create(
+      name,
+      type,
+      img_url,
+      current_price,
+      time,
+      auction_duration
+    ).then((auction) => res.json(auction));
+  } else {
+    res.status(422).json({ message: "not logged in" });
+  }
+});
