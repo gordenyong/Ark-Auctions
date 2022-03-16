@@ -7,5 +7,5 @@ axios
   .then((res) => res.data)
   .then((auctions) => {
     state.auctions = auctions;
-    renderAuctions();
+    render("auctions");
   });
