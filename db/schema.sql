@@ -9,7 +9,7 @@ CREATE TABLE auctions(
   image_url TEXT,
   increment_price TEXT, 
   current_price TEXT, 
-  datetime TEXT, 
+  time TEXT, 
   active TEXT, 
   auction_duration TEXT
 );
