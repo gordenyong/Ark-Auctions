@@ -1,5 +1,5 @@
 function renderSignUp() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
     <section class="sign-up">
       <form action="" onSubmit="signUp(event)">
         <h2>Sign Up:</h2>
@@ -18,16 +18,17 @@ function renderSignUp() {
         <button>Sign Up</button>
       </form>
     </section>
-  `
+  `;
 }
 
-
 function signUp(event) {
-  event.preventDefault()
-  const form = event.target
-  const data = Object.fromEntries(new FormData(form))
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+
+  console.log(data);
   axios
-    .post('/api/users', data)
-    .then(res => res.data)
-    .then(userName => console.log(userName))
+    .post("/api/users", data)
+    .then((res) => res.data)
+    .then((userName) => console.log(userName));
 }

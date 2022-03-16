@@ -1,5 +1,5 @@
 function renderLogin() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
     <section class="log-in">
     <div class="error"></div>
       <form action="" onSubmit="login(event)">
@@ -16,20 +16,21 @@ function renderLogin() {
         <button>Login</button>
       </form>
     </section>
-  `
+  `;
 }
 
-
 function login(event) {
-  event.preventDefault()
-  const form = event.target
-  const data = Object.fromEntries(new FormData(form))
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+  console.log(data);
   axios
-    .post('/api/sessions', data)
-    .then(res => res.data)
-    .then(userName => console.log(userName))
-    .catch(error => {
-      let errorDOM =document.querySelector('.log-in .error')
-      errorDOM.textContent = error.response.data.message 
-    })
+    .post("/api/sessions", data)
+    .then((res) => res.data)
+    .then((userName) => console.log(userName))
+    .catch((error) => {
+      let errorDOM = document.querySelector(".log-in .error");
+      console.log(error.response);
+      errorDOM.textContent = error.response.data.message;
+    });
 }

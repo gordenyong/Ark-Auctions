@@ -21,5 +21,7 @@ app.use(logger);
 app.use(express.static("client"));
 
 app.use(express.json());
-
+app.use(sessions);
 app.use("api/auctions", auctionController);
+app.use("/api/users", usersController);
+app.use("/api/sessions", sessionsController);
