@@ -1,0 +1,93 @@
+.log-in,
+.sign-up {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: rgb(249, 249, 249);
+  width: 95%;
+  height: 95%;
+  max-width: 600px;
+  max-height: 600px;
+  /* padding: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 5000px rgba(0, 0, 0, 0.5);
+  /* Negative half of width. */
+}
+
+.log-in form,
+.sign-up form {
+  width: 90%;
+  height: 90%;
+}
+
+.log-in fieldset,
+.sign-up fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 0px;
+  padding: 0px;
+}
+
+.log-in input,
+.sign-up input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.log-in label,
+.sign-up label {
+  text-align: left;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.log-in button,
+.sign-up button {
+  width: 100%;
+  height: 30px;
+  font-weight: 600;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.log-in h2,
+.sign-up h2 {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 50px;
+}
+
+.log-in > header,
+.sign-up > header {
+  display: flex;
+  flex-direction: row;
+}
+
+.sign-up h2:first-child,
+.log-in h2:nth-child(2) {
+  color: rgba(0, 0, 0, 1);
+}
+
+.sign-up h2:nth-child(2),
+.log-in h2:nth-child(1) {
+  color: rgba(0, 0, 0, 0.1);
+}
+.sign-up h2:nth-child(2):hover,
+.log-in h2:nth-child(1):hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+}

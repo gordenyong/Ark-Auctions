@@ -8,13 +8,13 @@ router.post("/", (req, res) => {
   const { email, password } = req.body;
   User.findByEmail(email).then((user) => {
     if (user) {
-      console.log("userexsit");
       const isValidPassword = bcrypt.compareSync(
         password,
         user.password_digest
       );
       if (isValidPassword) {
         //log the user in
+        console.log(user);
         console.log(user.id);
         req.session.userId = user.id;
         //send back user's name
