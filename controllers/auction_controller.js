@@ -38,5 +38,7 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   const auctionId = req.params.id;
 
-  Auction.findAuctionById(auctionId);
+  Auction.findAuctionById(auctionId).then(() =>
+    res.json({ message: "successfully clicked" })
+  );
 });
