@@ -3,10 +3,11 @@ function renderHeader() {
 
   headerNav.innerHTML = `
   <header>
-    <h1>Ark Auctions</h1>
+    <h1 onClick="render('auctions')">Ark Auctions</h1>
     <ul>
       <li class="material-icons create-auction" onClick="render('auctions')">list</li>
-      ${showSignUpLogIn()}
+        ${showSignUpLogIn()}
+       
     </ul>
   </header>
   `;
@@ -16,11 +17,13 @@ function showSignUpLogIn() {
   if (state.userName) {
     return `
       <li class="material-icons create-auction" onClick="render('createAuction')">add_circle</li>
+    
     `;
   } else {
     return `
       <li id="signUpIcon" class=" sign-up-icon" onClick="render('signUp')">Sign Up</li>
       <li id="loginIcon" class=" login-icon" onClick="render('login')">Login</li>
+    
     `;
   }
 }
