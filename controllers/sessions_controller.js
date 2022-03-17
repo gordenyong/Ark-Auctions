@@ -14,8 +14,6 @@ router.post("/", (req, res) => {
       );
       if (isValidPassword) {
         //log the user in
-        console.log(user);
-        console.log(user.id);
         req.session.userId = user.id;
         //send back user's name
         res.status(200).json({ userName: user.name });
