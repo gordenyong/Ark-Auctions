@@ -10,11 +10,7 @@ function renderAuctions() {
   return state.auctions
     .map(
       (auction) => `
-<<<<<<< HEAD
         <section class='auction' data-id="${auction.id}" onClick="auctionBiddingPage(${auction.id})">
-=======
-        <section class='auction' data-id="${auction.id}" onClick = "">
->>>>>>> 97dbaaa (Ethan changes please ignore this one)
             <div>
               <img src="${auction.image_url}" alt="">
             </div>   
