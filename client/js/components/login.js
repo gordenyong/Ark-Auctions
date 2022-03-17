@@ -32,12 +32,15 @@ function login(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  console.log(data);
+  console.log(state);
   axios
     .post("/api/sessions", data)
     .then((res) => res.data)
     .then((data) => (state.userName = data.userName))
-    .then(() => render("auctions"))
+    .then(() => {
+      render("auctions");
+      renderHeader();
+    })
     .catch((error) => {
       let errorDOM = document.querySelector(".log-in .error");
       errorDOM.textContent = error.response.data.message;
