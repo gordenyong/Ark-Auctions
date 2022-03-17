@@ -25,6 +25,10 @@ const Auction = {
       ])
       .then((dbRes) => dbRes.rows[0]);
   },
+
+  findAuctionById: (auctionId) => {
+    console.log(auctionId);
+  },
 };
 
 module.exports = Auction;
