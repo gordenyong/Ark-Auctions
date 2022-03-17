@@ -10,7 +10,11 @@ function renderAuctions() {
   return state.auctions
     .map(
       (auction) => `
+<<<<<<< HEAD
         <section class='auction' data-id="${auction.id}" onClick="auctionBiddingPage(${auction.id})">
+=======
+        <section class='auction' data-id="${auction.id}" onClick = "">
+>>>>>>> 97dbaaa (Ethan changes please ignore this one)
             <div>
               <img src="${auction.image_url}" alt="">
             </div>   
@@ -18,6 +22,11 @@ function renderAuctions() {
                 <h2>${auction.name}</h2>
                 <h3>$${auction.current_price}</h3>
             </header>
+            
+            <body>
+            <input type="text" name="placePrice" class="place-price">
+            <button>Place Bid</button>
+            </body>
         </section>
     `
     )
