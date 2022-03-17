@@ -23,7 +23,6 @@ router.post("/", (req, res) => {
     const current_price = req.body.current_price;
     const start_time = req.body.start_time;
     const end_time = req.body.end_time;
-    const loggedIn = true;
 
     Auction.create(
       user_id,
