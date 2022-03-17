@@ -6,8 +6,6 @@ function renderAuction() {
     </section>`;
 }
 
-function renderAuctionBid() {
-  `  
-
-  `;
+function renderAuctionBid(auction) {
+  console.log(auction);
 }
