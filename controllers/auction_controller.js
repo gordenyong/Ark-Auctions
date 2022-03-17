@@ -14,7 +14,7 @@ module.exports = router;
 router.post("/", (req, res) => {
   console.log(req.session.userId);
   if (req.session.userId) {
-    const user_id = req.body.user_id;
+    const user_id = req.session.userId;
     const item_name = req.body.item_name;
     const item_description = req.body.item_description;
     const image_url = req.body.image_url;
@@ -43,5 +43,5 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   const auctionId = req.params.id;
 
-  Auction.findAuctionById(auctionId);
+  Auction.findAuctionById(auctionId).then((auction) => res.json(auction));
 });

@@ -39,7 +39,10 @@ const Auction = {
   },
 
   findAuctionById: (auctionId) => {
-    console.log(auctionId);
+    const sql = `
+        SELECT * FROM auctions WHERE id = $1
+    `;
+    return db.query(sql, [auctionId]).then((dbRes) => dbRes.rows[0]);
   },
 };
 
