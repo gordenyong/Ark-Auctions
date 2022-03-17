@@ -28,5 +28,5 @@ function auctionBiddingPage(auctionID) {
   axios
     .get(`/api/auctions/${auctionID}`)
     .then((res) => res.data)
-    .then((auction) => renderAuctionBid(auction));
+    .then((auction) => renderAuction(auction));
 }
