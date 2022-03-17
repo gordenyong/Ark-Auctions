@@ -10,11 +10,10 @@ function renderAuctions() {
   return state.auctions
     .map(
       (auction) => `
-        <section class='auction' data-id="${auction.id}>
+        <section class='auction' data-id="${auction.id} onClick=">
             <div>
               <img src="${auction.image_url}" alt="">
             </div> 
-            <span class="view-auction" onClick="viewAuction(event)">View auction</span>  
             <header>
                 <h2>${auction.name}</h2>
                 <h3>$${auction.current_price}</h3>
