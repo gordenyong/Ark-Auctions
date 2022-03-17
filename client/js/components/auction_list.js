@@ -22,7 +22,6 @@ function renderAuctions() {
     `
     )
     .join("");
-  console.log();
 }
 
 function auctionBiddingPage(auctionID) {
