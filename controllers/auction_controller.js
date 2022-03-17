@@ -37,5 +37,6 @@ router.post("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const auctionId = req.params.id;
-  console.log(auctionId);
+
+  Auction.findAuctionById(auctionId);
 });

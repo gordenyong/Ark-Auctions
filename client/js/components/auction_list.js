@@ -26,5 +26,6 @@ function renderAuctions() {
 }
 
 function auctionBiddingPage(auctionID) {
-  axios.get(`/api/auctions/${auctionID}`);
+  axios.get(`/api/auctions/${auctionID}`).then();
+  renderAuction();
 }
