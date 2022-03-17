@@ -5,13 +5,16 @@
   justify-content: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.wp.com%2Fwww.survive-ark.com%2Fwp-content%2Fuploads%2F2016%2F01%2Fbanner_ark.jpg&f=1&nofb=1");
-  background-attachment: fixed;
-  background-size: contain;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
 }
 
 header {
+  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -19,13 +22,12 @@ header {
   color: rgb(255, 255, 255);
   height: 100px;
   width: 100%;
-}
-
-header {
   max-width: 1200px;
 }
 
 header h1 {
+  position: absolute;
+  z-index: 1;
   text-shadow: 2px 2px 2px rgb(20, 20, 20);
   font-size: 2rem;
   cursor: pointer;
@@ -33,9 +35,11 @@ header h1 {
 
 header ul {
   display: flex;
-  justify-content: center;
+  position: relative;
+  bottom: 5px;
   list-style: none;
   padding: 0;
+  cursor: pointer;
 }
 
 header li {
@@ -44,7 +48,7 @@ header li {
 
 header li:hover {
   color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .material-icons {
@@ -53,9 +57,9 @@ header li:hover {
 
 @media only screen and (min-width: 768px) {
   header h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     width: 70%;
-    padding-left: 30%;
+    /* padding-left: 30%; */
     text-align: center;
     margin: 0px;
   }
@@ -64,6 +68,9 @@ header li:hover {
     height: 200px;
   }
   header ul {
-    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
   }
 }

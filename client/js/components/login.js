@@ -32,7 +32,6 @@ function login(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  console.log(state);
   axios
     .post("/api/sessions", data)
     .then((res) => res.data)
