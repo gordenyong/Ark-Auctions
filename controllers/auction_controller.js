@@ -14,21 +14,27 @@ module.exports = router;
 router.post("/", (req, res) => {
   console.log(req.session.userId);
   if (req.session.userId) {
-    const name = req.body.name;
-    const type = req.body.type;
-    const img_url = req.body.image_url;
+    const user_id = req.body.user_id;
+    const item_name = req.body.item_name;
+    const item_description = req.body.item_description;
+    const image_url = req.body.image_url;
+    const starting_price = req.body.starting_price;
+    const increment_price = req.body.increment_price;
     const current_price = req.body.current_price;
-    const time = req.body.time;
-    const auction_duration = req.body.auction_duration;
+    const start_time = req.body.start_time;
+    const end_time = req.body.end_time;
     const loggedIn = true;
 
     Auction.create(
-      name,
-      type,
-      img_url,
+      user_id,
+      item_name,
+      item_description,
+      image_url,
+      starting_price,
+      increment_price,
       current_price,
-      time,
-      auction_duration
+      start_time,
+      end_time
     ).then((auction) => res.json(auction));
   } else {
     res.status(422).json({ message: "not logged in" });

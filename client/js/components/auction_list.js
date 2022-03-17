@@ -15,7 +15,7 @@ function renderAuctions() {
               <img src="${auction.image_url}" alt="">
             </div>   
             <header>
-                <h2>${auction.name}</h2>
+                <h2>${auction.item_name}</h2>
                 <h3>$${auction.current_price}</h3>
             </header>
         </section>

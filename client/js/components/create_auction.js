@@ -4,29 +4,45 @@ function renderCreateAuction() {
         <form action="" onSubmit="createAuction(event)">
           <h2>Add auction:</h2>
           <fieldset>
-            <label for="">Name: </label><br>
-            <input type="text" name="name">
+            <label for="">Item Name: </label><br>
+            <input type="text" name="item_name">
           </fieldset>
+
           <fieldset>
-            <label for="">Current Type: </label><br>
-            <input type="text" name="type">
+            <label for="">Item Description: </label><br>
+            <input type="text" name="item_description">
           </fieldset>
+
           <fieldset>
             <label for="">Image URL: </label><br>
             <input type="text" name="image_url">
           </fieldset>
+
           <fieldset>
             <label for="">Starting Price: </label><br>
-            <input type="text" name="current_price">
+            <input type="text" name="starting_price">
           </fieldset>
+
           <fieldset>
-            <label for="">Starting time: </label><br>
-            <input type="text" name="time">
+            <label for="">Increment Price: </label><br>
+            <input type="text" name="increment_price">
           </fieldset>
+
           <fieldset>
-            <label for="">Auction Duration: </label><br>
-            <input type="text" name="auction_duration">
+          <label for="">Current Price: </label><br>
+          <input type="text" name="current_price">
           </fieldset>
+
+          <fieldset>
+          <label for="">Start Time: </label><br>
+          <input type="text" name="start_time">
+          </fieldset>
+
+          <fieldset>
+          <label for="">End Time: </label><br>
+          <input type="text" name="end_time">
+          </fieldset>
+
           <button>Add Auction</button>
         </form>
       </section>

@@ -4,14 +4,14 @@ CREATE DATABASE auction_db;
 CREATE TABLE auctions(
   id SERIAL PRIMARY KEY,
   user_id TEXT,
-  name TEXT,
-  type TEXT,
+  item_name TEXT,
+  item_description TEXT,
   image_url TEXT,
+  starting_price TEXT, 
   increment_price TEXT, 
-  current_price TEXT, 
-  time TEXT, 
-  active TEXT, 
-  auction_duration TEXT
+  current_price TEXT,
+  start_time TEXT, 
+  end_time TEXT 
 );
 
 CREATE TABLE users(
@@ -21,3 +21,7 @@ CREATE TABLE users(
   password_digest TEXT,
   location TEXT
 );
+
+
+  -- item_name, item_description, image_url, starting_price, increment_price, current_price, start_time, end_time, 
+
