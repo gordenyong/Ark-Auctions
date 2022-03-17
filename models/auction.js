@@ -7,21 +7,33 @@ const Auction = {
     return db.query(sql).then((dbRes) => dbRes.rows);
   },
 
-  create: (name, type, image_url, current_price, time, auction_duration) => {
-    console.log(name, type, image_url, current_price, time, auction_duration);
+  create: (
+    user_id,
+    item_name,
+    item_description,
+    image_url,
+    starting_price,
+    increment_price,
+    current_price,
+    start_time,
+    end_time
+  ) => {
     const sql = `
-            INSERT INTO auctions(name, type, image_url, current_price, time, auction_duration)
-            VALUES ($1,$2,$3,$4,$5,$6)
+            INSERT INTO auctions(user_id, item_name, item_description, image_url, starting_price, increment_price, current_price, start_time, end_time)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
             RETURNING *
         `;
     return db
       .query(sql, [
-        name,
-        type,
+        user_id,
+        item_name,
+        item_description,
         image_url,
+        starting_price,
+        increment_price,
         current_price,
-        time,
-        auction_duration,
+        start_time,
+        end_time,
       ])
       .then((dbRes) => dbRes.rows[0]);
   },
