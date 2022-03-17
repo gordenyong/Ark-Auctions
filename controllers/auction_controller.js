@@ -34,3 +34,8 @@ router.post("/", (req, res) => {
     res.status(422).json({ message: "not logged in" });
   }
 });
+
+router.get("/:id", (req, res) => {
+  const auctionId = req.params.id;
+  console.log(auctionId);
+});

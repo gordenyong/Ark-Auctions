@@ -10,7 +10,7 @@ function renderAuctions() {
   return state.auctions
     .map(
       (auction) => `
-        <section class='auction' data-id="${auction.id}">
+        <section class='auction' data-id="${auction.id}" onClick="auctionBiddingPage(${auction.id})">
             <div>
               <img src="${auction.image_url}" alt="">
             </div>   
@@ -23,4 +23,8 @@ function renderAuctions() {
     )
     .join("");
   console.log();
+}
+
+function auctionBiddingPage(auctionID) {
+  axios.get(`/api/auctions/${auctionID}`);
 }
