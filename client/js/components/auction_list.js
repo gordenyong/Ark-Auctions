@@ -10,10 +10,10 @@ function renderAuctions() {
   return state.auctions
     .map(
       (auction) => `
-        <section class='auction' data-id="${auction.id}" onClick="auctionBiddingPage(${auction.id})">
+        <section class='auction' data-id="${auction.id} onClick=">
             <div>
               <img src="${auction.image_url}" alt="">
-            </div>   
+            </div> 
             <header>
                 <h2>${auction.name}</h2>
                 <h3>$${auction.current_price}</h3>
@@ -22,10 +22,30 @@ function renderAuctions() {
     `
     )
     .join("");
-  console.log();
 }
 
-function auctionBiddingPage(auctionID) {
-  axios.get(`/api/auctions/${auctionID}`).then();
-  renderAuction();
+function viewAuction(event) {
+  const viewAuctionSpan = event.target;
+  const auctionDOM = viewAuctionSpan.closest(".auction");
+  const auctionId = auctionDOM.dataset.id;
+  return state.auctions.filter((auction) => auction.id == auctionId);
+
+  //axios.get(`/api/auctions/${auctionId}`)
+
+  //   axios.view(`/api/auctions/${auctionId}`).then(() => {
+  //     //selecting one auction
+  //     state.auctions = state.auctions.filter(
+  //       (singleAuction) => singleAuction.id == auctionId
+  //     );
+  //     //remove the treasure from the DOM
+  //     //Approach 1:
+  //     render("auctionList");
+  //     //Approach 2:
+  //     // treasureDOM.remove()
+  //   });
 }
+
+// function auctionBiddingPage(auctionID) {
+//   axios.get(`/api/auctions/${auctionID}`).then();
+//   viewAuction();
+// }
