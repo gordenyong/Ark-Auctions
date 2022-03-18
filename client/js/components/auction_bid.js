@@ -1,6 +1,4 @@
 function renderAuction(data) {
-  console.log(data);
-  console.log(data.image_url);
   if (state.userName) {
     document.querySelector("#page").innerHTML = `
     <section class="auction-bid">

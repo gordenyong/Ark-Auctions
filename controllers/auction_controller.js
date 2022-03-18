@@ -4,12 +4,14 @@ const Auction = require("../models/auction");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  Auction.findAll().then((auctions) => res.json(auctions));
-  loggedIn = false;
+router.get("/user_auctions", (req, res) => {
+  const userID = req.session.userId;
+  Auction.findAllByUser(userID).then((auctions) => res.json(auctions));
 });
 
-module.exports = router;
+router.get("/", (req, res) => {
+  Auction.findAll().then((auctions) => res.json(auctions));
+});
 
 router.post("/", (req, res) => {
   console.log(req.session.userId);
@@ -45,3 +47,5 @@ router.get("/:id", (req, res) => {
 
   Auction.findAuctionById(auctionId).then((auction) => res.json(auction));
 });
+
+module.exports = router;

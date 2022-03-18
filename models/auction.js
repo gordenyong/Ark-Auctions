@@ -7,6 +7,11 @@ const Auction = {
     return db.query(sql).then((dbRes) => dbRes.rows);
   },
 
+  findAllByUser: (userID) => {
+    const sql = "SELECT * FROM auctions WHERE user_id = $1";
+    return db.query(sql, [userID]).then((dbRes) => dbRes.rows);
+  },
+
   create: (
     user_id,
     item_name,
