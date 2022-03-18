@@ -49,6 +49,15 @@ const Auction = {
     `;
     return db.query(sql, [auctionId]).then((dbRes) => dbRes.rows[0]);
   },
+
+  changeBidPrice: (auctionId, current_price) => {
+    const sql = `
+        UPDATE auctions SET current_price=$2 WHERE id=$1 RETURNING *
+    `;
+    return db
+      .query(sql, [auctionId, current_price])
+      .then((dbRes) => dbRes.rows[0]);
+  },
 };
 
 module.exports = Auction;
