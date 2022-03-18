@@ -17,7 +17,8 @@ function showSignUpLogIn() {
   if (state.userName) {
     return `
       <li class="material-icons create-auction" onClick="render('createAuction')">add_circle</li>
-    
+
+      <li cclass="material-icons-outlined" onClick="render('logout')">logout</li>
     `;
   } else {
     return `
@@ -41,7 +42,7 @@ function render(component) {
     renderLogin();
   } else if (component === "auctions") {
     renderAuctionList();
-  }
+  } else if (component === "logout") renderLogOut();
 }
 
 // // component to render initially

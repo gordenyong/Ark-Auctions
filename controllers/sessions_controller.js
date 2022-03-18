@@ -27,4 +27,9 @@ router.post("/", (req, res) => {
   });
 });
 
+router.delete("/", (req, res) => {
+  req.session.userId = undefined;
+  res.json({ message: "you have logged out" });
+});
+
 module.exports = router;
