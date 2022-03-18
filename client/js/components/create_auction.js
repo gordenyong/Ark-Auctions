@@ -29,11 +29,6 @@ function renderCreateAuction() {
           </fieldset>
 
           <fieldset>
-          <label for="">Current Price: </label><br>
-          <input type="text" name="current_price">
-          </fieldset>
-
-          <fieldset>
           <label for="">Start Time: </label><br>
           <input type="text" name="start_time">
           </fieldset>
