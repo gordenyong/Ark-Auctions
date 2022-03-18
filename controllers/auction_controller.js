@@ -42,9 +42,15 @@ router.post("/", (req, res) => {
   }
 });
 
+router.put("/:id", (req, res) => {
+  const itemId = req.params.id;
+  const newBidPrice = req.body.newCurrentPrice;
+  Auction.changeBidPrice(itemId, newBidPrice).then((price) => res.json(price));
+});
+// .then((res) => res.json({ message: "hello" }));
+
 router.get("/:id", (req, res) => {
   const auctionId = req.params.id;
-
   Auction.findAuctionById(auctionId).then((auction) => res.json(auction));
 });
 

@@ -11,9 +11,11 @@ function renderAuction(data) {
           <div>
             <h3>Time remaining:04:39</h3>
             <h3>Current Bid: ${data.current_price}</h3>
-            <form action=“”>
-              <input type=“number” name=“placePrice” id=“placePriceId” value="${data.increment_price}" />
-              <button id=“increaseBidBtn”>Place Bid</button>
+            <form action="" onSubmit="changeBidPrice(event)">
+              <input type="hidden" name="itemId" value="${data.id}"</input>
+              <input type="hidden" name="current_price" value="${data.current_price}"</input>
+              <input type="number" name="placePrice" id="placePriceId" value="${data.increment_price}" />
+              <button id="increaseBidBtn">Place Bid</button>
             </form>
           </div>
         </section>
@@ -64,6 +66,20 @@ function renderAuction(data) {
   }
 }
 
-function renderAuctionBid(auction) {
-  console.log(auction);
+function changeBidPrice(event) {
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+  console.log(data);
+  const itemId = data.itemId;
+  const bidPrice = parseInt(data.placePrice);
+  const currentPrice = parseInt(data.current_price);
+  const newCurrentPrice = {
+    newCurrentPrice: (bidPrice + currentPrice).toString(),
+  };
+
+  axios
+    .put(`/api/auctions/${itemId}`, newCurrentPrice)
+    .then((res) => res.data)
+    .then(() => render("auctions"));
 }
