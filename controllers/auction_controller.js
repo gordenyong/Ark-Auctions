@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
     const image_url = req.body.image_url;
     const starting_price = req.body.starting_price;
     const increment_price = req.body.increment_price;
-    const current_price = req.body.current_price;
+    const current_price = req.body.starting_price;
     const start_time = req.body.start_time;
     const end_time = req.body.end_time;
 
