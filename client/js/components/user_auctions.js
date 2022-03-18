@@ -1,9 +1,12 @@
 function renderUserAuctions() {
-  if (state.userName) {
-    return state.auctions
-      .filter((auction) => auction.user_id === "2")
-      .map(
-        (auction) => `
+  axios
+    .get("/api/auctions/user_auctions")
+    .then((res) => res.data)
+    .then((auctions) => {
+      console.log(auctions);
+      document.querySelector("#user-auctions").innerHTML = auctions
+        .map(
+          (auction) => `
       <section class='user-auction auction' data-id="${auction.id}" onClick="auctionBiddingPage(${auction.id})">
           <div>
             <img src="${auction.image_url}" alt="">
@@ -14,9 +17,9 @@ function renderUserAuctions() {
           </header>
       </section>
   `
-      )
-      .join("");
-  }
+        )
+        .join("");
+    });
 }
 
 function auctionBiddingPage(auctionID) {

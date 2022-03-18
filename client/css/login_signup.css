@@ -20,6 +20,10 @@
   /* Negative half of width. */
 }
 
+.create-auction {
+  position: relative;
+}
+
 .log-in form,
 .sign-up form {
   width: 90%;

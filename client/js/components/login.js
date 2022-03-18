@@ -23,7 +23,7 @@ function renderLogin() {
      
     </section>
     <section class="auction-list">
-      ${renderAuctions()}
+     
     </section>
   `;
 }

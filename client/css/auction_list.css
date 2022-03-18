@@ -46,11 +46,13 @@
 .auction header {
   padding: 5px;
   min-width: 50%;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   color: rgb(50, 50, 50);
+  /* font-size: ; */
 }
 
 .auction div {

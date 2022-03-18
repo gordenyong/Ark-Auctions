@@ -2,8 +2,9 @@ function renderHeader() {
   const headerNav = document.querySelector("#header-nav");
 
   headerNav.innerHTML = `
-  <header>
-    <h1 onClick="render('auctions')">Ark Auctions</h1>
+  <header class="header-logo">
+    <h1 onClick="render('auctions')">Gadget Flippers</h1>
+    <h3>Ingame Item Auctions For Gamers</h3>
     <ul>
       <li class="material-icons create-auction" onClick="render('auctions')">list</li>
         ${showSignUpLogIn()}
