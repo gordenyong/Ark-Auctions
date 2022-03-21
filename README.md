@@ -1,6 +1,6 @@
 # ARK AUCTIONS - an in-game item auction site
 
-Link:https://
+Link:https://auction-app-heroku.herokuapp.com/
 
 This is a collaborative project created by David Johnston, Gordon Yong Kung Hee, and Yifeng Zhan for General Assembly coding boot camp. The goal for this project is to build a single-page website that allows users to upload data to the server and then retrieve the data through the front end by using javascript codes.
 
