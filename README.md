@@ -1,4 +1,4 @@
-# ARK AUCTIONS - an in-game item auction site
+# Gadget Flippers - an in-game item auction site
 
 Link:https://auction-app-heroku.herokuapp.com/
 
